@@ -1,0 +1,54 @@
+---
+title: FAQs
+description: Here are where we answer Frequently Asked Questions
+
+
+---
+import Features from '../../../components/features.mdx';
+
+
+Here are some Frequently Asked Questions.
+
+
+## What is Sarus?
+
+A Javascript library that makes WebSockets more resilient to unexpected disconnections. Sarus acts as a wrapper around the WebSocket API, and adds some convenient features.
+
+## Why use Sarus instead of WebSockets directly?
+
+WebSockets are great for realtime data transmission, but they are very brittle when it comes to handling interruptions to network connectivity.
+
+To handle that, you end up having to write code to manage:
+
+- Replacing closed WebSocket instances with new ones.
+- Attaching event listener functions to new WebSocket instances that are created when existing WebSocket instances close.
+- Managing message delivery in case a WebSocket connection unexpectedly closes.
+
+Sarus handles all that for you, so you can focus on building your application.
+
+For more details, checkout the [why use Sarus?](/guides/faqs) page.
+
+## What features does it have?
+
+These are the main features that Sarus provides:
+
+<Features />
+
+## Where is Sarus used?
+
+Sarus is used in applications that require a robust WebSocket connection to provide realtime features, such as chat applications, live data dashboards, multiplayer games, and collaborative tools.
+
+It is also used in [Hub, a realtime framework built by Anephenix](https://hub.anephenix.com).
+
+## Can I check out the source code?
+
+Yes, the source code for Sarus is available on [GitHub](https://github.com/anephenix/sarus).
+
+## What licence does it use?
+
+Sarus is released under the [MIT licence](https://opensource.org/license/mit).
+
+## Questions?
+
+If you have any questions about Sarus, feel free to open an issue on the [GitHub repository](github.com/anephenix/sarus), or [contact via email](mailto:hello@anephenix.com).
+

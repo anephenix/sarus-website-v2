@@ -1,0 +1,52 @@
+---
+title: A JavaScript library for WebSockets
+description: Handle reconnections, event listener bindings, and message queuing with ease.
+template: splash # Remove or comment out this line to display the site sidebar on this page.
+hero:
+  tagline: Making WebSockets more robust and resilient.
+  image:
+    file: /src/assets/plug.svg
+  actions:
+    - text: Get started
+      link: /guides/get-started/
+      icon: right-arrow
+    - text: Documentation
+      link: /reference/documentation
+      variant: secondary
+---
+
+import Features from '../../components/features.mdx';
+
+## Install
+
+```shell
+npm i @anephenix/sarus
+```
+
+## Usage
+
+```javascript
+import Sarus from '@anephenix/sarus';
+
+const sarus = new Sarus({ url: 'wss://ws.anephenix.com' });
+
+sarus.on('message', (event) => {
+  console.log('Message from server ', event.data);
+});
+
+sarus.send('Hello world');
+```
+
+## Features
+
+<Features />
+
+## Source code
+
+The source code for Sarus is [available on GitHub](https://github.com/anephenix/sarus).
+
+## Licence and credits
+
+Sarus is released under the [MIT licence](https://opensource.org/license/mit), and is developed and maintained by [Anephenix](https://anephenix.com).
+
+

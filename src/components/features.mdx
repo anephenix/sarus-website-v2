@@ -1,0 +1,17 @@
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  	<Card title="Automatic reconnections" icon="approve-check">
+		If a WebSocket unexpectedly closes, Sarus will create a new WebSocket to replace the closed one automatically.
+  	</Card>
+  	<Card title="Robust event listener binding" icon="approve-check">
+    	Sarus handles attaching event listener functions to WebSockets, so that you don't have to re-bind those functions manually.
+	</Card>
+    <Card title="Resilient message delivery" icon="approve-check">
+		Sarus uses a message queue for sending messages to the server, ensuring that they get sent only when the WebSocket connection is open.
+	</Card>
+	<Card title="Isomorphic support" icon="approve-check">
+		Sarus can be used in both the web browser and in server-side runtimes like Node.js, Deno, and Bun.
+	</Card>
+
+</CardGrid>
