@@ -28,12 +28,15 @@ npm i @anephenix/sarus
 ```javascript
 import Sarus from '@anephenix/sarus';
 
+// Instantiate Sarus
 const sarus = new Sarus({ url: 'wss://ws.anephenix.com' });
 
+// Listen for messages from the server
 sarus.on('message', (event) => {
   console.log('Message from server ', event.data);
 });
 
+// Send a message to the server
 sarus.send('Hello world');
 ```
 
