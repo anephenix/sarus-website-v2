@@ -9,23 +9,37 @@ They suffer from these issues:
 
 ## WebSockets do not reconnect automatically
 
-A WebSocket connection could go down at anytime due to losing internet connectivity, or if the server handling the WebSocket connection goes down. When this happens, the WebSocket client will close the connection. It will not attempt to reconnect. If you want to re-establish the WebSocket connection, you have to create a new `WebSocket` instance on the client.
+A WebSocket connection could go down at anytime due to losing internet connectivity, or if the server handling the WebSocket connection goes down. When this happens, the WebSocket client will close the connection, and it will not reconnect.
 
 In my opinion, it would be great if there was an option to call `websocket.reconnect()` on a closed WebSocket instance.
 
+So how do you re-establish the connection?
+
+Well, you have to write code that does the following:
+
+1. Write a function that will create a new WebSocket instance.
+2. Attach that as an event listener function on the existing WebSocket's `close` event.
+3. Attach that as an event listener function on the new WebSocket instance, inside of the function in step 1.
+
+In short, you have to write code to handle re-establishing a connection.
+
 ## You have to attach event listeners again
 
-When you create new WebSocket instances to re-establish the connection, you have to re-attach all the event listeners that you had originally setup on the previous WebSocket instance.
+When you create new WebSocket instances to re-establish the connection, not only do you need to attach a function to listen on the `close` event, but you also need to re-attach all of the other event listener functions that you had on the existing WebSocket instance.
 
-Therefore you need to setup your code to handle doing this every time you create a new WebSocket instance.
+And you need to setup the code so that this happens every time a new WebSocket instance is created to replace a closed WebSocket instance.
+
+Again, it would be great if there was an option to call `websocket.reconnect()` on a closed WebSocket instance so that you don't have to do this.
 
 ## Messages sent while the connection is down are lost
 
-When the WebSocket connection is down, if you attempt to send messages via the WebSocket instance, not only are the messages not sent, but they are not kept for sending later. In short, they are lost.
+If the WebSocket instance's readyState is 3 (meaning closed), if you attempt to send messages via the WebSocket instance, not only are the messages not sent, but they are not kept for sending later.
 
-Therefore, if you want to send messages while the WebSocket connection is down, you have to implement your own queuing mechanism to store messages until the connection is re-established and open.
+In short, they are lost.
 
-In short, you end up writing a bit of code to handle these issues. Perhaps a library that does all that for you would be helpful?
+If you want to prevent that, then you need to keep messages in a list or queue of some kind, and send them only when the WebSocket instance's `readyState` value is 1 (meaning open). 
+
+In short, you have to write code to implement a Message Queue and use it for dispatching messages depending on the WebSocket's connection status (readyState).
 
 ## Introducing Sarus
 
