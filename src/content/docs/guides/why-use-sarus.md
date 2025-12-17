@@ -93,7 +93,7 @@ const sarus = new Sarus({ url: 'wss://ws.anephenix.com' });
 
 ### Message queuing
 
-Sarus implement a message queueing system that ensures that messages are sent only if the WebSocket connection is open.
+Sarus implements a message queueing system that ensures that messages are sent only if the WebSocket connection is open, saving you from having to write your own message queue as well as linking it to the status of the currently WebSocket instance's `readyState` value. 
 
 ### Message queue persistence
 
@@ -110,7 +110,7 @@ const sarus = new Sarus({
     storageType: 'session',
 });
 ```
-Or for longer-term persistence, you can use local storage:
+Or for longer-term persistence (say a page tab gets closed and then opened later on), you can use local storage:
 
 ```javascript
 import Sarus from '@anephenix/sarus';
