@@ -3,6 +3,40 @@ title: Attaching event listeners
 description: This describes how to add and remove event listeners to the WebSocket
 ---
 
+There are 4 events that a WebSocket instance emits:
+
+- open
+- message
+- error
+- close
+
+Normally you add event listener functions for those events like this:
+
+```javascript
+const open = (event) => {
+    console.log('WebSocket opened');
+}
+
+const message = (event) => {
+    console.log('WebSocket server sent', event.data);
+}
+
+const error = (event) => {
+    console.log('WebSocket error');
+}
+
+const close = (event) => {
+    console.log('WebSocket closed');
+}
+
+socket.onopen = open;
+socket.onmessage = message;
+socket.onerror = error;
+socket.onclose = close;
+```
+
+However, these event listener bindings will only apply to that WebSocket instance, and become irrelevant if the WebSocket instance loses its connection.
+
 ## How Sarus handles event listeners
 
 Using plain WebSockets, any time that you need to create a new WebSocket instance to reconnect, you also need to reattach all of your event listeners. 
