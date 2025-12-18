@@ -62,4 +62,4 @@ As Sarus handles that for them out of the box.
 
 ## Next steps
 
-For more information on other features of Sarus, check out the [documentation](/reference/documentation) to learn more.
+For more information on other features of Sarus, check out the [documentation](/documentation) to learn more.

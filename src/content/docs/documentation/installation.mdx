@@ -1,0 +1,76 @@
+---
+title: Installation
+description: This describes how to install Sarus
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Sarus is published to the [NPM](https://npmjs.com) package repository.
+
+Below are instructions for different package managers and server-side environments.
+
+<Tabs>
+  <TabItem label="NPM">
+```shell
+npm i @anephenix/sarus
+```
+  </TabItem>
+  <TabItem label="Yarn">
+```shell
+yarn add @anephenix/sarus
+```
+  </TabItem>
+  <TabItem label="pnpm">
+```shell
+pnpm i @anephenix/sarus
+```
+  </TabItem>
+  <TabItem label="Deno">
+```shell
+deno install npm:@anephenix/sarus
+```
+  </TabItem>
+    <TabItem label="Bun">
+```shell
+bun install @anephenix/sarus
+```
+  </TabItem>
+</Tabs>
+
+## Trying out the source code directly
+
+There is a way in NPM using `npm link` to load a local copy of the Sarus source code into your project for testing and development purposes.
+
+1. Clone the Sarus repository from GitHub: 
+
+```shell
+git clone https://github.com/anephenix/sarus.git
+```
+
+2. Navigate to the Sarus directory and install its dependencies:
+
+```shell
+cd sarus
+npm install
+```
+
+3. Build the Sarus source code:
+
+```shell
+npm run build
+```
+
+4. Link the Sarus package in whatever code repository you want to use it in:
+
+```shell
+cd <PATH_TO_YOUR_PROJECT>
+npm link <PATH_TO_SARUS_REPO>
+```
+
+5. Now you can import Sarus in your project as usual:
+
+```javascript
+import Sarus from '@anephenix/sarus';
+```
+
+If you are trying out changes you have made to the Sarus source code, you will need to rebuild Sarus each time you make a change, by running `npm run build` in the Sarus repository directory.

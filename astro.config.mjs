@@ -15,12 +15,23 @@ export default defineConfig({
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Why use Sarus?', slug: 'guides/why-use-sarus' },
 						{ label: 'Get started', slug: 'guides/get-started' },
-						{ label: 'FAQs', slug: 'guides/faqs' },
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Documentation',
+					items: [
+						{ label: 'Introduction', slug: 'documentation' },
+						{ label: 'Installation', slug: 'documentation/installation' },
+						{ label: 'Setup', slug: 'documentation/setup' },
+						{ label: 'Attaching Event Listeners', slug: 'documentation/attaching-event-listeners' },
+						{ label: 'Reconnection strategy options', slug: 'documentation/reconnection-strategy-options' },
+						{ label: 'Receiving messages', slug: 'documentation/receiving-messages' },
+						{ label: 'Sending messages', slug: 'documentation/sending-messages' },
+					]
+				},
+				{
+					label: 'Other items',
+					autogenerate: { directory: 'other-items' },
 				},
 			],
 			customCss: [

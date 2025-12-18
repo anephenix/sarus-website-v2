@@ -24,19 +24,19 @@ When you create a WebSocket instance, there are 4 events that you can listen on:
 </thead>
 <tbody>
     <tr>
-        <td>Open</td>
+        <td>open</td>
         <td>Triggers when the connection is established</td>
     </tr>
     <tr>
-        <td>Message</td>
+        <td>message</td>
         <td>Triggers when a message is received from the server</td>
     </tr>
     <tr>
-        <td>Error</td>
+        <td>error</td>
         <td>Triggers when an error occurs</td>
     </tr>
     <tr>
-        <td>Close</td>
+        <td>close</td>
         <td>Triggers when the connection is closed</td>
     </tr>
 </tbody>

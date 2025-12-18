@@ -3,6 +3,8 @@ title: Reconnection strategy options
 description: This describes the configuration options for handling reconnections
 ---
 
+<div class="in-progress">NOTE - page is a work in progress</div>
+
 There are a number of options for handling reconnections in Sarus
 
 ## How Sarus handles reconnections
@@ -20,4 +22,3 @@ This is the default behaviour, but you can configure it so that:
 
 Here we'll explore the options.
 
-## NOTE - Docs are still being written for this page
