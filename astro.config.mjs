@@ -27,6 +27,8 @@ export default defineConfig({
 						{ label: 'Reconnection strategy options', slug: 'documentation/reconnection-strategy-options' },
 						{ label: 'Receiving messages', slug: 'documentation/receiving-messages' },
 						{ label: 'Sending messages', slug: 'documentation/sending-messages' },
+						{ label: 'Disconnecting', slug: 'documentation/disconnecting' },
+						{ label: 'Message queue options', slug: 'documentation/message-queue-options' },
 					]
 				},
 				{
