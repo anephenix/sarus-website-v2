@@ -11,3 +11,6 @@ This is the documentation for Sarus. Here you will find detailed information on 
 - [Reconnection strategy options](/documentation/reconnection-strategy-options)
 - [Receiving messages](/documentation/receiving-messages)
 - [Sending messages](/documentation/sending-messages)
+- [Disconnecting](/documentation/disconnecting)
+- [Message queue optiojns](/documentations/message-queue-options)
+- [WebSocket protocols](/documentation/websocket-protocols)

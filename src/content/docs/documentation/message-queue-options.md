@@ -54,3 +54,18 @@ This depends on your needs.
 If you want the message queue to persist only in that browser tab, and persist with page reloads, then use sessionStorage.
 
 If you want the message queue to persist even if the browser tab and browser is closed and then opened again later, then use localStorage.
+
+
+## Setting the storage key
+
+When Sarus is persisting the message queue in the Web Storage API, it uses the storage key `sarus`.
+
+If you wish to override the storage key and use something else, you can set it when instantiating the Sarus instance:
+
+```javascript
+const sarus = new Sarus({
+	url: 'wss://ws.anephenix.com',
+	storageType: 'local',
+    storageKey: 'my-custom-storage-key' // Set this to watever string value you like
+});
+```

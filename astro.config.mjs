@@ -29,6 +29,7 @@ export default defineConfig({
 						{ label: 'Sending messages', slug: 'documentation/sending-messages' },
 						{ label: 'Disconnecting', slug: 'documentation/disconnecting' },
 						{ label: 'Message queue options', slug: 'documentation/message-queue-options' },
+						{ label: 'WebSocket protocols', slug: 'documentation/websocket-protocols' },
 					]
 				},
 				{

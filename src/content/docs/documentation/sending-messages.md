@@ -3,8 +3,6 @@ title: Sending messages
 description: This document describes the options around sending messages
 ---
 
-<div class="in-progress">NOTE - page is a work in progress</div>
-
 ## Sending messages to the WebSocket server
 
 To send a message to the WebSocket server, you can write this:
@@ -24,4 +22,14 @@ const encodedPayload = JSON.stringify(payload);
 sarus.send(encodedPayload);
 ```
 
-If you are sending binary data, you can also do that. There will be more coming on that in the future.
+### Handling binary messages
+
+WebSockets can be used to transmit either UTF-8 strings or binary data (in the form of an Arry Buffer or a Blob).
+
+In order to ensure that the WebSocket is handling that, you'll want to set the binary type on the WebSocket. You can do that when you instantiate the Sarus instance:
+
+```javascript
+const sarus = new Sarus({
+    binaryType: 'arraybuffer' // or 'blob'
+});
+```
