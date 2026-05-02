@@ -2,9 +2,11 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
+    integrations: [
 		starlight({
 			title: 'Sarus',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/anephenix/sarus' }],
@@ -43,4 +45,6 @@ export default defineConfig({
 	      ],
 		}),
 	],
+
+    adapter: cloudflare()
 });
